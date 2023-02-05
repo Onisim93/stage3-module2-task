@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -49,7 +50,12 @@ public class DataSource {
     }
 
     public AuthorModel updateAuthor(AuthorModel authorModel) {
-        return authorMap.computeIfPresent(authorModel.getId(), (key, value) -> authorModel);
+        AuthorModel model = authorMap.get(authorModel.getId());
+
+        model.setName(authorModel.getName());
+        model.setLastUpdateDate(authorModel.getCreateDate());
+
+        return model;
     }
 
     public Boolean deleteAuthorById(Long id) {
@@ -63,7 +69,14 @@ public class DataSource {
     }
 
     public NewsModel updateNews(NewsModel newsModel) {
-        return newsMap.computeIfPresent(newsModel.getId(), (key, value) -> newsModel);
+        NewsModel model = newsMap.get(newsModel.getId());
+
+        model.setTitle(newsModel.getTitle());
+        model.setContent(newsModel.getContent());
+        model.setAuthorId(newsModel.getAuthorId());
+        model.setLastUpdateDate(newsModel.getCreateDate());
+
+        return model;
     }
 
     public Boolean deleteNewsById(Long id) {
