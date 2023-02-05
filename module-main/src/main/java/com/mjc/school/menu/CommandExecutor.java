@@ -1,8 +1,8 @@
-package com.mjc.school.main.menu;
+package com.mjc.school.menu;
 
 import com.mjc.school.controller.impl.AuthorController;
 import com.mjc.school.controller.impl.NewsController;
-import com.mjc.school.main.util.MessageHelper;
+import com.mjc.school.util.MessageHelper;
 import com.mjc.school.service.dto.AuthorDto;
 import com.mjc.school.service.dto.NewsDto;
 import com.mjc.school.service.exception.NoSuchEntityException;

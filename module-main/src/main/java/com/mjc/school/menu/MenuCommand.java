@@ -1,4 +1,4 @@
-package com.mjc.school.main.menu;
+package com.mjc.school.menu;
 
 import lombok.Getter;
 

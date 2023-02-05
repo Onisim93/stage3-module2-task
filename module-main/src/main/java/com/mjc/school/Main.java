@@ -1,14 +1,13 @@
-package com.mjc.school.main;
+package com.mjc.school;
 
-import com.mjc.school.main.config.AppConfig;
+import com.mjc.school.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppManager appManager = context.getBean(AppManager.class);
 
-        AppManager manager = context.getBean(AppManager.class);
-
-        manager.start();
+        appManager.start();
     }
 }

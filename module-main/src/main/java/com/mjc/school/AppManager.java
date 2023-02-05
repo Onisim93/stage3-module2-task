@@ -1,9 +1,9 @@
-package com.mjc.school.main;
+package com.mjc.school;
 
-import com.mjc.school.main.menu.CommandExecutor;
-import com.mjc.school.main.menu.Menu;
-import com.mjc.school.main.menu.MenuCommand;
-import com.mjc.school.main.util.MessageHelper;
+import com.mjc.school.menu.CommandExecutor;
+import com.mjc.school.menu.Menu;
+import com.mjc.school.menu.MenuCommand;
+import com.mjc.school.util.MessageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
