@@ -1,9 +1,7 @@
 package com.mjc.school;
 
-import com.mjc.school.menu.CommandExecutor;
+import com.mjc.school.controller.util.CommandExecutor;
 import com.mjc.school.menu.Menu;
-import com.mjc.school.menu.MenuCommand;
-import com.mjc.school.util.MessageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,18 +18,9 @@ public class AppManager {
 
     public void start() {
 
-        int action = -1;
-
-        while ( action != 0) {
+        while (true) {
             menu.draw();
-            action = (int) MessageHelper.readLong();
-            try {
-                MenuCommand command = MenuCommand.values()[action];
-                commandExecutor.execute(command);
-            }
-            catch (Exception e) {
-                MessageHelper.printMessage("Invalid command.");
-            }
+            commandExecutor.getAndExecuteNextCommand();
         }
     }
 }

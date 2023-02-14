@@ -1,6 +1,7 @@
 package com.mjc.school.menu;
 
-import com.mjc.school.util.MessageHelper;
+import com.mjc.school.controller.util.MenuCommand;
+import com.mjc.school.controller.util.MessageHelper;
 import org.springframework.stereotype.Component;
 
 @Component
